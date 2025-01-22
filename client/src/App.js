@@ -11,7 +11,6 @@ function App() {
   <div className='container'>
 <InputTodo />
 <ListTodos />
-
   </div>
 
  </Fragment>
