@@ -9,7 +9,10 @@ const InputTodo = () => {
   const onSubmitForm = async (e) => {
     // Prevent the default behavior of the form submission (e.g., page refresh)
     e.preventDefault();
-
+    if (!description.trim()) {
+      alert("Please enter a valid to do item.");
+      return;
+    }
     try {
       // Create an object to send in the request body
       const body = { description };
@@ -34,9 +37,10 @@ const InputTodo = () => {
     <Fragment>
       {/* Header for the todo list */}
       <h1 className="text-center mt-5">PERN Todo List</h1>
-      
+
       {/* Form for adding a new todo */}
       <form className="d-flex mt-5" onSubmit={onSubmitForm}>
+        
         {/* Input field for the todo description */}
         <input
           type="text" // Input type is text
